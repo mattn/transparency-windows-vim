@@ -13,19 +13,19 @@ install
 
 If you use pathogen-vim or something similar,
 
-  vimfiles:
-    bundle:
-      vimtweak:
-         (git clone https://github.com/mattn/vimtweak)
-      transparency-windows-vimtweak:
-         (git clone https://github.com/mattn/transparency-windows-vim)
+    vimfiles:
+      bundle:
+        vimtweak:
+           (git clone https://github.com/mattn/vimtweak)
+        transparency-windows-vimtweak:
+           (git clone https://github.com/mattn/transparency-windows-vim)
 
 If you don't use pathogen-vim,
 
-  vimfiles:
-    vimtweak.dll
-    plugin:
-      transparency-windows.vim
+    vimfiles:
+      vimtweak.dll
+      plugin:
+        transparency-windows.vim
 
 screenshot
 ----------
