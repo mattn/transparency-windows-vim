@@ -1,0 +1,33 @@
+transparency-windows-vim
+========================
+
+windows port of http://vim-users.jp/2011/10/hack234/
+
+require
+-------
+
+https://github.com/mattn/vimtweak
+
+install
+-------
+
+If you use pathogen-vim or something similar,
+
+  vimfiles:
+    bundle:
+      vimtweak:
+         (git clone https://github.com/mattn/vimtweak)
+      transparency-windows-vimtweak:
+         (git clone https://github.com/mattn/transparency-windows-vim)
+
+If you don't use pathogen-vim,
+
+  vimfiles:
+    vimtweak.dll
+    plugin:
+      transparency-windows.vim
+
+screenshot
+----------
+
+![](http://go-gyazo.appspot.com/db5c1c7c8b0f9323.png)
