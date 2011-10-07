@@ -3,7 +3,7 @@ if &cp || (exists('g:loaded_transparency_windows_vim') && g:loaded_transparency_
 endif
 let g:loaded_transparency_windows_vim = 1
 
-if !(has('win32') || has('win64') || has('gui_running'))
+if !has('gui_running') || (!has('win32') && !has('win64'))
   finish
 endif
 
