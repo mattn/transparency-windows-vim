@@ -7,9 +7,12 @@ if !has('gui_running') || (!has('win32') && !has('win64'))
   finish
 endif
 
-let s:dll = globpath(&rtp, 'vimtweak.dll')
-if len(s:dll) == 0
-  finish
+let s:dll = get(g:, 'vimtweak_dll_path', '')
+if empty(s:dll)
+  let s:dll = get(split(globpath(&rtp, 'vimtweak.dll'), '\n'), 0, '')
+  if empty(s:dll)
+    finish
+  endif
 endif
 
 function! s:Transparency(v)
