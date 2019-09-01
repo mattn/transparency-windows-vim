@@ -6,6 +6,18 @@ endif
 
 let g:loaded_transparency_windows_vim = 1
 
+if exists('g:Transparency_FocusGained')
+	let s:Transparency_FocusGained = g:Transparency_FocusGained
+else
+	let s:Transparency_FocusGained = 20
+endif
+
+if exists('g:Transparency_FocusLost')
+	let s:Transparency_FocusLost = g:Transparency_FocusLost
+else
+	let s:Transparency_FocusLost = 50
+endif
+
 if !has('gui_running') || (!has('win32') && !has('win64'))
   finish
 endif
@@ -26,12 +38,13 @@ function! s:Install(flag)
   augroup TransparencyWindows
     autocmd!
     if a:flag =~# '^\(1\|[tT]rue\|[yY]es\)$'
-      autocmd FocusGained * call s:Transparency(20)
-      autocmd FocusLost * call s:Transparency(50)
+      autocmd FocusGained * call s:Transparency(s:Transparency_FocusGained)
+      autocmd FocusLost * call s:Transparency(s:Transparency_FocusLost)
     endif
   augroup END
 endfunction
 
 command! -nargs=1 Transparency call <SID>Install(<f-args>)
+command! -nargs=1 TransparencyChange call <SID>Transparency(<args>)
 
 Transparency Yes
