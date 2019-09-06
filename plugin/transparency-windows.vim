@@ -26,12 +26,13 @@ function! s:Install(flag)
   augroup TransparencyWindows
     autocmd!
     if a:flag =~# '^\(1\|[tT]rue\|[yY]es\)$'
-      autocmd FocusGained * call s:Transparency(20)
-      autocmd FocusLost * call s:Transparency(50)
+      autocmd FocusGained * call s:Transparency(get(g:, 'Transparency_FocusGained', 20))
+      autocmd FocusLost * call s:Transparency(get(g:, 'Transparency_FocusLost', 50))
     endif
   augroup END
 endfunction
 
 command! -nargs=1 Transparency call <SID>Install(<f-args>)
+command! -nargs=1 TransparencyChange call <SID>Transparency(<args>)
 
 Transparency Yes
