@@ -1,7 +1,7 @@
 transparency-windows-vim
 ========================
 
-windows port of http://vim-users.jp/2011/10/hack234/
+windows port of https://vim-jp.org/vim-users-jp/2011/10/05/Hack-234.html
 
 require
 -------
